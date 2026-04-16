@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Uncommon Business x Claude | Partner Case Studies</title>
+    <meta name="description" content="How The Uncommon Business trains thousands of business owners to build AI-powered organizations with Claude. Real case studies, real transformations.">
+    <style>
+        :root {
+            --evergreen: #2F5B4A;
+            --evergreen-dark: #1E3D31;
+            --evergreen-light: #3A7360;
+            --gold: #D1B25A;
+            --gold-light: #E8D48A;
+            --sage: #9CAF97;
+            --cream: #F4F1E8;
+            --beige: #E3D7BC;
+            --white: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6b6b6b;
+            --claude-orange: #D97757;
+            --claude-tan: #E8D5B5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Geneva, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(47,91,74,0.1);
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-brand-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--evergreen);
+            letter-spacing: -0.3px;
+        }
+
+        .nav-brand-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--beige);
+        }
+
+        .nav-brand-partner {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--claude-orange);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--evergreen);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 160px 32px 100px;
+            background: linear-gradient(165deg, var(--evergreen-dark) 0%, var(--evergreen) 40%, var(--evergreen-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(209,178,90,0.08) 0%, transparent 70%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(156,175,151,0.1) 0%, transparent 70%);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-partnership {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 100px;
+            padding: 8px 20px;
+            margin-bottom: 32px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-partnership span {
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .hero-partnership .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            max-width: 900px;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: clamp(16px, 2vw, 20px);
+            color: rgba(255,255,255,0.8);
+            max-width: 680px;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+            max-width: 800px;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.65);
+            font-weight: 500;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 100px 32px;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 3.5vw, 44px);
+            font-weight: 700;
+            color: var(--evergreen-dark);
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 640px;
+            line-height: 1.6;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            margin-top: 48px;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .about-text strong {
+            color: var(--evergreen);
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .about-highlight {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(47,91,74,0.08);
+        }
+
+        .about-highlight-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .about-highlight-icon.green {
+            background: rgba(47,91,74,0.08);
+        }
+
+        .about-highlight-icon.gold {
+            background: rgba(209,178,90,0.15);
+        }
+
+        .about-highlight-icon.sage {
+            background: rgba(156,175,151,0.2);
+        }
+
+        .about-highlight h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--evergreen-dark);
+            margin-bottom: 6px;
+        }
+
+        .about-highlight p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ===== CASE STUDIES ===== */
+        .case-studies {
+            background: var(--white);
+        }
+
+        .case-studies-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .case-studies-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .case-card {
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid rgba(47,91,74,0.08);
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-card:hover {
+            border-color: rgba(47,91,74,0.15);
+            box-shadow: 0 12px 48px rgba(47,91,74,0.08);
+            transform: translateY(-2px);
+        }
+
+        .case-card.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--evergreen-dark), var(--evergreen));
+            border: none;
+        }
+
+        .case-card.featured .case-name,
+        .case-card.featured .case-quote,
+        .case-card.featured .case-result-label {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .case-card.featured .case-business {
+            color: var(--gold);
+        }
+
+        .case-card.featured .case-result-value {
+            color: var(--white);
+        }
+
+        .case-card.featured .case-industry {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .case-card.featured .case-quote {
+            border-left-color: var(--gold);
+        }
+
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 12px;
+        }
+
+        .case-identity {
+            flex: 1;
+        }
+
+        .case-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 4px;
+        }
+
+        .case-business {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--evergreen);
+            line-height: 1.2;
+        }
+
+        .case-industry {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--evergreen);
+            background: rgba(47,91,74,0.06);
+            border: 1px solid rgba(47,91,74,0.1);
+            white-space: nowrap;
+        }
+
+        .case-quote {
+            font-size: 15px;
+            color: var(--text-medium);
+            line-height: 1.6;
+            border-left: 3px solid var(--gold);
+            padding-left: 16px;
+            margin: 20px 0 24px;
+            font-style: italic;
+        }
+
+        .case-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .case-card.featured .case-results {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .case-result {
+            background: rgba(47,91,74,0.04);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .case-card.featured .case-result {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .case-result-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--evergreen);
+            line-height: 1.2;
+            margin-bottom: 2px;
+        }
+
+        .case-result-label {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ===== TRANSFORMATION STORIES ===== */
+        .stories {
+            background: var(--cream);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .story-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(47,91,74,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 8px 32px rgba(47,91,74,0.06);
+            transform: translateY(-2px);
+        }
+
+        .story-emoji {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .story-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--evergreen-dark);
+            margin-bottom: 2px;
+        }
+
+        .story-detail {
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .story-quote {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .story-before-after {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .story-ba-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-medium);
+        }
+
+        .story-ba-label {
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .story-ba-label.before {
+            background: rgba(209,120,87,0.1);
+            color: var(--claude-orange);
+        }
+
+        .story-ba-label.after {
+            background: rgba(47,91,74,0.1);
+            color: var(--evergreen);
+        }
+
+        /* ===== INDUSTRIES ===== */
+        .industries {
+            background: var(--white);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-top: 48px;
+        }
+
+        .industry-tag {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 20px 24px;
+            text-align: center;
+            border: 1px solid rgba(47,91,74,0.06);
+            transition: all 0.2s ease;
+        }
+
+        .industry-tag:hover {
+            border-color: var(--gold);
+            background: var(--white);
+        }
+
+        .industry-tag-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .industry-tag-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--evergreen-dark);
+        }
+
+        /* ===== WHY CLAUDE ===== */
+        .why-claude {
+            background: linear-gradient(165deg, var(--evergreen-dark) 0%, var(--evergreen) 100%);
+            color: var(--white);
+        }
+
+        .why-claude .section-label {
+            color: var(--gold);
+        }
+
+        .why-claude .section-title {
+            color: var(--white);
+        }
+
+        .why-claude .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .why-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .why-card-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+        }
+
+        /* ===== METRICS BAR ===== */
+        .metrics {
+            background: var(--cream);
+            padding: 64px 32px;
+        }
+
+        .metrics-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .metric-item {
+            padding: 24px;
+        }
+
+        .metric-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--evergreen);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            background: var(--white);
+            text-align: center;
+            padding: 100px 32px;
+        }
+
+        .cta .section-title {
+            max-width: 700px;
+            margin: 0 auto 16px;
+        }
+
+        .cta .section-subtitle {
+            margin: 0 auto 40px;
+            max-width: 560px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--evergreen);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--evergreen-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(47,91,74,0.2);
+        }
+
+        .cta-secondary {
+            display: block;
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .cta-secondary a {
+            color: var(--evergreen);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--evergreen-dark);
+            color: rgba(255,255,255,0.5);
+            padding: 48px 32px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .footer-tagline {
+            font-size: 14px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-card.featured .case-results {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            section {
+                padding: 72px 20px;
+            }
+
+            .hero {
+                padding: 130px 20px 72px;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-results {
+                grid-template-columns: 1fr;
+            }
+
+            .case-card.featured .case-results {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        /* ===== ANIMATION ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <span class="nav-brand-text">The Uncommon Business</span>
+                <div class="nav-brand-divider"></div>
+                <span class="nav-brand-partner">Claude Partner</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#stories">Transformations</a></li>
+                <li><a href="#why-claude">Why Claude</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-partnership">
+                <span>The Uncommon Business</span>
+                <div class="dot"></div>
+                <span>Claude by Anthropic</span>
+            </div>
+            <h1>Training Thousands of Businesses to Build with <span class="gold">Claude</span></h1>
+            <p class="hero-sub">The Uncommon Business is the first company in the world to train humans on becoming AI Architects. We teach business owners and their teams how to build AI-powered organizations, department by department, with Claude at the center.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">10,000+</div>
+                    <div class="hero-stat-label">Students Trained</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">150+</div>
+                    <div class="hero-stat-label">AI Employees Built Internally</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">25+</div>
+                    <div class="hero-stat-label">Industries Represented</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">3+</div>
+                    <div class="hero-stat-label">Years Teaching AI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-inner">
+            <div class="section-label">Who We Are</div>
+            <div class="section-title">A Human Training Company,<br>Powered by Claude</div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p><strong>The Uncommon Business (TUB)</strong> is an AI education and business transformation company founded by Callan Faulkner. We don't just teach AI tools. We teach mindset, leadership, and opportunity recognition, with AI as the transformation vehicle.</p>
+                    <p>Our flagship program, <strong>Automate to Accelerate (A2A)</strong>, is a 12-week live cohort that takes business owners from "I use ChatGPT sometimes" to running a fully integrated AI operating system across every department of their business.</p>
+                    <p>Claude is the backbone of everything we teach. From building AI employees with Claude Projects to deploying production-grade applications with Claude Code, our students learn to leverage Claude's full capability stack: Skills, Projects, the API, and agentic workflows.</p>
+                    <p>Our team of 25 humans operates <strong>150+ AI employees</strong> internally, practicing exactly what we teach. When we say Claude can transform a business, we're speaking from lived experience.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon green">&#127891;</div>
+                        <h3>AI Architect Training</h3>
+                        <p>We coined the "AI Architect" identity. Students learn to Spot bottlenecks, Build AI employees to solve them, and Train those employees to improve over time.</p>
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon gold">&#9889;</div>
+                        <h3>Department-by-Department Methodology</h3>
+                        <p>Not random tool demos. Structured builds across Sales, Marketing, Operations, Finance, HR, and Customer Success. Each department gets its own Claude workspace.</p>
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon sage">&#127760;</div>
+                        <h3>Claude-Native Curriculum</h3>
+                        <p>Claude Projects, Claude Skills, Claude Code, MCP connectors, the Anthropic API. Our entire curriculum is built on and around Claude's ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies" id="case-studies">
+        <div class="section-inner">
+            <div class="case-studies-header">
+                <div class="section-label">Case Studies</div>
+                <div class="section-title">Real Businesses. Real Results.<br>Built with Claude.</div>
+                <p class="section-subtitle">From solo founders to scaling companies, our students build AI systems that deliver measurable business outcomes.</p>
+            </div>
+
+            <div class="case-grid">
+
+                <!-- Featured: Jennifer Coleman -->
+                <div class="case-card featured fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Jennifer Coleman</div>
+                            <div class="case-business">Gigawatt Coffee Roasters</div>
+                        </div>
+                        <div class="case-industry">eCommerce / Coffee</div>
+                    </div>
+                    <div class="case-quote">"13 weeks. Nearly doubled BFCM revenue YoY. Built a Klaviyo War Room. Automated Illinois sales tax filing. Built an automated inventory management system. Hired my first executive assistant after 6 years of running the back end solo. None of this required a developer, a designer, or a bigger team."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">~2x</div>
+                            <div class="case-result-label">BFCM Revenue YoY</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">25%</div>
+                            <div class="case-result-label">PR Pitch Response Rate</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">Featured</div>
+                            <div class="case-result-label">In The Hustle (2M+ readers)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Susan Falcone -->
+                <div class="case-card fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Susan Falcone, Age 53</div>
+                            <div class="case-business">Torch + TILT Networks</div>
+                        </div>
+                        <div class="case-industry">Tech / Product</div>
+                    </div>
+                    <div class="case-quote">"I thought my career was headed for the trash can. Six months ago I had very little hands-on experience with AI. I went from never having written a system prompt to owning the full AI product surface for a company heading into acquisition."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">New Title</div>
+                            <div class="case-result-label">Principal AI Product Architect</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">6 Months</div>
+                            <div class="case-result-label">Zero to AI Leadership</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Missy Ross -->
+                <div class="case-card fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Missy Ross</div>
+                            <div class="case-business">Vero Dawn</div>
+                        </div>
+                        <div class="case-industry">AI Consulting</div>
+                    </div>
+                    <div class="case-quote">"I'm not a developer. I don't write code. But I sat in Claude Code, described what I wanted, made decisions, gave feedback, pushed back when something wasn't right, and we built production-grade software together."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">4 Clients</div>
+                            <div class="case-result-label">Signed in 48 Hours</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">1 Week</div>
+                            <div class="case-result-label">Full Website + AI Chatbot Built</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paul Deloughery -->
+                <div class="case-card fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Paul Deloughery</div>
+                            <div class="case-business">Sudden Wealth Protection Law</div>
+                        </div>
+                        <div class="case-industry">Legal Services</div>
+                    </div>
+                    <div class="case-quote">"AI has fundamentally changed how we operate. What used to take our firm days of manual work now happens systematically. The revenue impact was almost immediate."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">+$20K/mo</div>
+                            <div class="case-result-label">Gross Revenue Increase</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">Law Firm</div>
+                            <div class="case-result-label">Fully AI-Integrated Operations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jennifer Arthur -->
+                <div class="case-card fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Jennifer Arthur, Age 66</div>
+                            <div class="case-business">Generative Income</div>
+                        </div>
+                        <div class="case-industry">Digital Products</div>
+                    </div>
+                    <div class="case-quote">"I'm 66 years old and I didn't even know how to share screen on Zoom five years ago. And now I'm building AI apps on the weekends."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">24 Products</div>
+                            <div class="case-result-label">AI-Powered Platform Built</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">Zero Code</div>
+                            <div class="case-result-label">Built from a Cracked iPhone</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kaelyn Sitar -->
+                <div class="case-card fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Kaelyn Sitar</div>
+                            <div class="case-business">Blue Lime Property Maintenance</div>
+                        </div>
+                        <div class="case-industry">Property Management</div>
+                    </div>
+                    <div class="case-quote">"I've saved myself 20+ hours every week. All of this incredible work led me to be elected Vice President of the board during the 12-week A2A program."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">~50 hrs &rarr; 2 min</div>
+                            <div class="case-result-label">SOP Building Time Per SOP</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">20+ hrs/wk</div>
+                            <div class="case-result-label">Time Saved Weekly</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Siri Amrit Khalsa -->
+                <div class="case-card fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Siri Amrit Khalsa</div>
+                            <div class="case-business">Aligned Impact Strategies</div>
+                        </div>
+                        <div class="case-industry">Financial Advisory</div>
+                    </div>
+                    <div class="case-quote">"His normal day now is like his absolute freaking best day a year and a half ago."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">6-8 hrs &rarr; 30 min</div>
+                            <div class="case-result-label">Sales Proposal Time</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">$100M</div>
+                            <div class="case-result-label">New Revenue Vision</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Butch Threadgill -->
+                <div class="case-card fade-up">
+                    <div class="case-header">
+                        <div class="case-identity">
+                            <div class="case-name">Butch Threadgill, Age 70</div>
+                            <div class="case-business">Toqeph Solutions</div>
+                        </div>
+                        <div class="case-industry">Roofing / Construction</div>
+                    </div>
+                    <div class="case-quote">"This is the most freeing exercise I have ever experienced."</div>
+                    <div class="case-results">
+                        <div class="case-result">
+                            <div class="case-result-value">Patent Filed</div>
+                            <div class="case-result-label">AI-Assisted Provisional Patent</div>
+                        </div>
+                        <div class="case-result">
+                            <div class="case-result-value">45 Years</div>
+                            <div class="case-result-label">Industry Veteran Transformed</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Stories -->
+    <section class="stories" id="stories">
+        <div class="section-inner">
+            <div class="section-label">Transformation Stories</div>
+            <div class="section-title">Beyond the Metrics</div>
+            <p class="section-subtitle">AI doesn't just save time. It changes how people see themselves and their businesses.</p>
+
+            <div class="stories-grid">
+
+                <div class="story-card fade-up">
+                    <div class="story-emoji">&#128161;</div>
+                    <div class="story-name">Lindsay Quinn</div>
+                    <div class="story-detail">Life Transformation</div>
+                    <div class="story-quote">"From 'I don't know why I even signed up' (it was just a feeling I needed to) to living a completely different life."</div>
+                </div>
+
+                <div class="story-card fade-up">
+                    <div class="story-emoji">&#127793;</div>
+                    <div class="story-name">Danielle Leger</div>
+                    <div class="story-detail">The Polly Bateman</div>
+                    <div class="story-quote">"You didn't just teach AI skills. You threw a lifeline to someone drowning."</div>
+                    <div class="story-before-after">
+                        <div class="story-ba-item"><span class="story-ba-label before">Before</span> "Felt like I was drowning in open water"</div>
+                        <div class="story-ba-item"><span class="story-ba-label after">After</span> Signed first official paying client</div>
+                    </div>
+                </div>
+
+                <div class="story-card fade-up">
+                    <div class="story-emoji">&#127775;</div>
+                    <div class="story-name">Sophia Aluko</div>
+                    <div class="story-detail">Business Model Transformation</div>
+                    <div class="story-quote">"I've transformed my entire business since last year. AI has become a Trojan horse for me because everybody needs help."</div>
+                    <div class="story-before-after">
+                        <div class="story-ba-item"><span class="story-ba-label before">Before</span> "Dark hole where I felt so lost and useless"</div>
+                        <div class="story-ba-item"><span class="story-ba-label after">After</span> Closing extremely lucrative contracts</div>
+                    </div>
+                </div>
+
+                <div class="story-card fade-up">
+                    <div class="story-emoji">&#128640;</div>
+                    <div class="story-name">Danielle McCarter</div>
+                    <div class="story-detail">Root Down Land</div>
+                    <div class="story-quote">"Would not have been able to launch this business without A2A. Built the entire company from the ground up in 13 weeks: processes, website, brand, ICP, everything."</div>
+                </div>
+
+                <div class="story-card fade-up">
+                    <div class="story-emoji">&#129504;</div>
+                    <div class="story-name">Kerry Peters</div>
+                    <div class="story-detail">New View Strategies</div>
+                    <div class="story-quote">"AI is making it possible for me to continue on as a high achiever because I have systems to support me now. This class pulled me out of a dangerous mental spiral."</div>
+                </div>
+
+                <div class="story-card fade-up">
+                    <div class="story-emoji">&#10084;&#65039;</div>
+                    <div class="story-name">Irene Ramos</div>
+                    <div class="story-detail">TUB Team Member</div>
+                    <div class="story-quote">"I am actually the living proof that what we have here in TUB changes lives because it changed mine for the better. I'm not scared anymore."</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Diversity -->
+    <section class="industries" id="industries">
+        <div class="section-inner">
+            <div class="section-label">Industry Reach</div>
+            <div class="section-title">Every Industry. Every Department.</div>
+            <p class="section-subtitle">Our students come from every industry imaginable. AI Architecture is industry-agnostic.</p>
+            <div class="industries-grid">
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#9878;&#65039;</div><div class="industry-tag-name">Legal</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#9749;</div><div class="industry-tag-name">eCommerce</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#127968;</div><div class="industry-tag-name">Real Estate</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#128138;</div><div class="industry-tag-name">Healthcare</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#128200;</div><div class="industry-tag-name">Financial Services</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#127939;</div><div class="industry-tag-name">Coaching</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#128187;</div><div class="industry-tag-name">SaaS / Tech</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#127959;&#65039;</div><div class="industry-tag-name">Construction</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#128240;</div><div class="industry-tag-name">Marketing</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#127869;</div><div class="industry-tag-name">Food & Beverage</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#128218;</div><div class="industry-tag-name">Education</div></div>
+                <div class="industry-tag fade-up"><div class="industry-tag-icon">&#127757;</div><div class="industry-tag-name">Consulting</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <section class="metrics">
+        <div class="metrics-grid">
+            <div class="metric-item fade-up">
+                <div class="metric-number">20+</div>
+                <div class="metric-label">Hours Saved Per Week (Avg Student)</div>
+            </div>
+            <div class="metric-item fade-up">
+                <div class="metric-number">171</div>
+                <div class="metric-label">Survey Responses, Last Cohort</div>
+            </div>
+            <div class="metric-item fade-up">
+                <div class="metric-number">13</div>
+                <div class="metric-label">Weeks to Full AI Integration</div>
+            </div>
+            <div class="metric-item fade-up">
+                <div class="metric-number">60+</div>
+                <div class="metric-label">AI Employee Builds Per Cohort</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Claude -->
+    <section class="why-claude" id="why-claude">
+        <div class="section-inner">
+            <div class="section-label">Why Claude</div>
+            <div class="section-title">Claude Is Our Platform of Choice</div>
+            <p class="section-subtitle">We chose Claude because it's the best tool for building real business systems, and our students' results prove it.</p>
+            <div class="why-grid">
+                <div class="why-card fade-up">
+                    <div class="why-card-number">01</div>
+                    <h3>Claude Projects as Department Workspaces</h3>
+                    <p>Every student builds five department workspaces using Claude Projects: Marketing, Sales, Customer Success, Operations, and Finance. Each workspace has custom instructions, a knowledge base, and department-specific AI employees.</p>
+                </div>
+                <div class="why-card fade-up">
+                    <div class="why-card-number">02</div>
+                    <h3>Claude Skills for Repeatable Workflows</h3>
+                    <p>Students build Claude Skills that turn complex, multi-step business processes into one-click automations. From payroll processing to PR pitching to financial modeling, Skills are the backbone of their AI operating system.</p>
+                </div>
+                <div class="why-card fade-up">
+                    <div class="why-card-number">03</div>
+                    <h3>Claude Code for Production Applications</h3>
+                    <p>Advanced students use Claude Code to build production-grade software: websites, chatbots, dashboards, and self-learning AI systems. Zero coding experience required. Claude Code is the co-builder.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="section-inner">
+            <div class="section-label">Partner With Us</div>
+            <div class="section-title">Let's Build the Future of AI Education Together</div>
+            <p class="section-subtitle">The Uncommon Business is training the next generation of AI Architects. With Claude as our platform, the results speak for themselves.</p>
+            <a href="https://theuncommonbusiness.co" class="cta-button" target="_blank">Visit TheUncommonBusiness.co &rarr;</a>
+            <div class="cta-secondary">
+                <a href="mailto:support@theuncommonbusiness.co">support@theuncommonbusiness.co</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">The Uncommon Business</div>
+            <div class="footer-tagline">The first company in the world to train humans on becoming AI Architects.</div>
+            <div class="footer-links">
+                <a href="https://theuncommonbusiness.co" target="_blank">Website</a>
+                <a href="#case-studies">Case Studies</a>
+                <a href="#stories">Transformations</a>
+                <a href="#why-claude">Why Claude</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 The Uncommon Business. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
